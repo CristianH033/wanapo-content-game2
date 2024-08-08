@@ -161,7 +161,7 @@ export const useGameStore = defineStore(
   },
   {
     persist: {
-      key: 'wanapo-content-game'
+      key: 'wanapo-content-game2'
     }
   }
 )
