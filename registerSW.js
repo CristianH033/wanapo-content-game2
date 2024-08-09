@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/wanapo-content-game2/sw.js', { scope: '/wanapo-content-game2/' })})}
