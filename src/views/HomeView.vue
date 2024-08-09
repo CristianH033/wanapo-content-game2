@@ -65,17 +65,6 @@ onMounted(() => {})
             alt=""
           />
         </div>
-        <!-- <div class="w-full h-full min-h-[150px] flex flex-row justify-end items-start">
-          <div class="w-[60%]">
-            <p class="font-bold text-3xl text-center text-white italic">
-              <span class="text-2xl">Participa en el </span>
-              <br />
-              <span>desafío mental</span>
-              <br />
-              <span>Content</span>
-            </p>
-          </div>
-        </div> -->
       </div>
     </div>
     <div class="w-full flex flex-col justify-center items-center">

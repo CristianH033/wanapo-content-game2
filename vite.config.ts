@@ -14,10 +14,14 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     VitePWA({
+      strategies: 'generateSW',
       registerType: 'autoUpdate',
       injectRegister: 'script-defer',
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,json,mp3}']
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,json,mp3}'],
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true
       },
       manifest: {
         name: 'Concéntrese - Content',
