@@ -46,11 +46,6 @@ invoke(async () => {
 })
 
 invoke(async () => {
-  await until(attempts).toBe(gameStore.getAttemptsLimit)
-  endGame({ title: 'Juego Terminado', text: 'Se acabaron tus intentos' })
-})
-
-invoke(async () => {
   await until(timeLeft).toBe(0)
   endGame({ title: 'Juego Terminado', text: 'Se acabo el tiempo' })
 })
@@ -89,13 +84,21 @@ watch(
 )
 
 onBeforeRouteLeave(async () => {
-  if (attempts.value < gameStore.getAttemptsLimit && timeLeft.value > 0) return false
+  if (
+    attempts.value < gameStore.getAttemptsLimit &&
+    timeLeft.value > 0 &&
+    gameStore.getTilesUnmatched.length > 0
+  ) {
+    return false
+  }
 
   await store.rippleTransition()
 })
 
 onMounted(() => {
   if (gameStore.gameStarted) resume()
+
+  if (gameStore.gameStarted && gameStore.getTilesUnmatched.length === 0) endGame()
 })
 </script>
 
