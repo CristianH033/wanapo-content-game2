@@ -34,7 +34,7 @@ onMounted(() => {})
         <div class="flex flex-col gap-1 w-full">
           <label class="text-xl text-resolution-blue">Tiempo de previsualización</label>
           <input
-            class="rounded-2xl border border-resolution-blue py-4 px-10 text-xl"
+            class="min-w-0 w-full rounded-2xl border border-resolution-blue py-4 px-10 text-xl max-w-full"
             type="number"
             name="startGameCountDown"
             :value="gameStore.startGameCountDown"
@@ -43,7 +43,7 @@ onMounted(() => {})
         <div class="flex flex-col gap-1 w-full">
           <label class="text-xl text-resolution-blue">Tiempo limite de juego</label>
           <input
-            class="rounded-2xl border border-resolution-blue py-4 px-10 text-xl"
+            class="min-w-0 w-full rounded-2xl border border-resolution-blue py-4 px-10 text-xl max-w-full"
             type="number"
             name="timeLimit"
             :value="gameStore.timeLimit"
@@ -52,18 +52,21 @@ onMounted(() => {})
         <div class="flex flex-col gap-1 w-full">
           <label class="text-xl text-resolution-blue">Limite de intentos</label>
           <input
-            class="rounded-2xl border border-resolution-blue py-4 px-10 text-xl"
+            class="min-w-0 w-full rounded-2xl border border-resolution-blue py-4 px-10 text-xl max-w-full"
             type="number"
             name="attemptsLimit"
             :value="gameStore.attemptsLimit"
           />
         </div>
         <div class="flex flex-col gap-1 w-full">
-          <Button type="submit">Guardar</Button>
+          <Button type="submit"> Guardar </Button>
         </div>
         <div class="flex flex-col gap-1 w-full">
           <RouterLink :to="{ name: 'home' }" custom v-slot="{ navigate }">
-            <Button type="button" @click="navigate">Volver a inicio</Button>
+            <Button type="button" @click="navigate">
+              <span class="text-nowrap">Volver</span
+              ><span class="hidden sm:inline"> al inicio</span>
+            </Button>
           </RouterLink>
         </div>
       </fieldset>
