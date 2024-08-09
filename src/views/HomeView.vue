@@ -7,6 +7,7 @@ import { useAppStore } from '@/stores/app'
 import { useGameStore } from '@/stores/game'
 import { onMounted } from 'vue'
 import { RouterLink, onBeforeRouteLeave, useRouter } from 'vue-router'
+import resplandor from '@/assets/img/resplandor.webp'
 
 const store = useAppStore()
 const gameStore = useGameStore()
@@ -30,24 +31,41 @@ onMounted(() => {})
         duration: 500
       }
     }"
-    class="h-dvh w-full overflow-x-hidden grid grid-cols-1 grid-rows-[1fr_1fr_10rem]"
+    class="h-dvh w-full overflow-x-hidden grid grid-cols-1 grid-rows-[14rem_1fr_10rem]"
   >
     <QLogo
       @click="router.push({ name: 'config' })"
       class="absolute top-2 left-2 w-16 max-w-[15%] h-16 fill-resolution-blue"
     />
     <div class="w-full flex flex-col justify-center items-center">
-      <img src="@/assets/img/content-logo.svg" class="max-h-32 max-w-[50%]" />
+      <img src="@/assets/img/content-logo.svg" class="max-h-32 max-w-[40%]" />
     </div>
     <div class="w-full flex flex-col justify-start items-center relative">
       <img class="w-full -mt-32" :src="greenArc" alt="" srcset="" />
-      <div class="w-full grow bg-mosque">
-        <img
-          class="absolute bottom-0 left-0 max-w-[70%] max-h-[120%] self-end"
-          src="@/assets/img/nurse.webp"
-          alt=""
-        />
-        <div class="w-full h-full min-h-[150px] flex flex-row justify-end items-start">
+      <div class="w-full grow bg-mosque relative">
+        <div
+          class="absolute bottom-0 left-0 w-full h-auto max-h-full flex flex-col sm:flex-row justify-center items-center sm:gap-8"
+        >
+          <p class="font-bold text-3xl text-center text-white italic">
+            <span class="text-2xl">Participa en el </span>
+            <br />
+            <span>desafío mental</span>
+            <br />
+            <span>Content</span>
+          </p>
+          <img
+            :style="{
+              backgroundImage: `url(${resplandor})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'contain',
+              backgroundPosition: 'center'
+            }"
+            class="scale-110 sm:self-end h-full max-h-[40rem] max-w-[40rem] sm:max-w-[20rem] -mx-14 -my-14 sm:mx-0 -mb-4 sm:-mb-10"
+            src="@/assets/img/bodegon.webp"
+            alt=""
+          />
+        </div>
+        <!-- <div class="w-full h-full min-h-[150px] flex flex-row justify-end items-start">
           <div class="w-[60%]">
             <p class="font-bold text-3xl text-center text-white italic">
               <span class="text-2xl">Participa en el </span>
@@ -57,12 +75,12 @@ onMounted(() => {})
               <span>Content</span>
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="w-full flex flex-col justify-center items-center">
       <RouterLink to="/game" custom v-slot="{ navigate }">
-        <Button class="shadow-xl z-20 -mt-8" type="button" @click="navigate">
+        <Button class="shadow-xl z-20 -mt-6" type="button" @click="navigate">
           <span>Inicio</span>
         </Button>
       </RouterLink>
