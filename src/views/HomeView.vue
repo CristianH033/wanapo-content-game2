@@ -31,22 +31,22 @@ onMounted(() => {})
         duration: 500
       }
     }"
-    class="h-dvh w-full overflow-x-hidden grid grid-cols-1 grid-rows-[14rem_1fr_10rem]"
+    class="h-dvh w-full overflow-x-hidden grid grid-cols-1 grid-rows-[12rem_1fr_10rem]"
   >
     <QLogo
       @click="router.push({ name: 'config' })"
       class="absolute top-2 left-2 w-16 max-w-[15%] h-16 fill-resolution-blue"
     />
     <div class="w-full flex flex-col justify-center items-center">
-      <img src="@/assets/img/content-logo.svg" class="max-h-32 max-w-[40%]" />
+      <img src="@/assets/img/content-logo.svg" class="-mt-12 sm:-mt-0 max-h-32 max-w-[40%]" />
     </div>
     <div class="w-full flex flex-col justify-start items-center relative">
       <img class="w-full -mt-32" :src="greenArc" alt="" srcset="" />
       <div class="w-full grow bg-mosque relative">
         <div
-          class="absolute bottom-0 left-0 w-full h-auto max-h-full flex flex-col sm:flex-row justify-center items-center sm:gap-8"
+          class="absolute bottom-0 left-0 w-full h-full max-h-full flex flex-col sm:flex-row justify-center items-center sm:gap-8"
         >
-          <p class="font-bold text-3xl text-center text-white italic">
+          <p class="drop-shadow-lg font-bold text-3xl text-center text-white italic">
             <span class="text-2xl">Participa en el </span>
             <br />
             <span>desafío mental</span>
@@ -60,7 +60,7 @@ onMounted(() => {})
               backgroundSize: 'contain',
               backgroundPosition: 'center'
             }"
-            class="scale-110 sm:self-end h-full max-h-[40rem] max-w-[40rem] sm:max-w-[20rem] -mx-14 -my-14 sm:mx-0 -mb-4 sm:-mb-10"
+            class="object-contain scale-110 sm:self-end h-full sm:h-96 w-[90%] max-w-[22rem] sm:max-w-[25rem] md:max-w-[30rem] -mx-14 -my-16 sm:mx-0 -mb-4 sm:-mb-10"
             src="@/assets/img/bodegon.webp"
             alt=""
           />
